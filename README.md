@@ -10,3 +10,11 @@ It's using the [`MikaelDui.ChampionMasteryGg.Client`](https://github.com/mikaeld
 # Packaging
 
     dotnet lambda package
+
+# Consuming the Lambda
+With the [`MikaelDui.ChampionMasteryGg.Client`](https://github.com/mikaeldui/ChampionMastery.GG-dotnet-client) library.
+
+    ChampionMasteryGgClient.BaseAddress = "https://1a2b3c4d5e.execute-api.eu-west-2.amazonaws.com/";
+    ChampionMasteryGgClient.Encoding = ChampionMasteryGgEncoding.Json;
+    using ChampionMasteryGgClient client = new();
+    var highscores = await client.GetHighscoresAsync();
