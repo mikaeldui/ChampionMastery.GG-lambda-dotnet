@@ -15,5 +15,5 @@
   "function-runtime":"dotnetcore3.1",
   "function-memory-size" : 512,
   "function-timeout" : 30,
-  "function-handler" : "ChampionMasteryGg.Lambda::ChampionMasteryGg.Lambda::FunctionHandler"
+  "function-handler" : "ChampionMasteryGg::ChampionMasteryGg.Lambda::FunctionHandler"
 }
