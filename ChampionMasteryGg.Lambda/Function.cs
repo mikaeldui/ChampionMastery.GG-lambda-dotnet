@@ -1,6 +1,6 @@
 using Amazon.Lambda.APIGatewayEvents;
 
-[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))] // Is this needed?
+[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
 namespace ChampionMasteryGg
 {
