@@ -23,7 +23,7 @@ namespace ChampionMasteryGg
             {
                 case "highscores":
                     return Found(await cmggClient.GetHighscoresAsync());
-                case "champions":
+                case "champion":
                     switch (invocationEvent.QueryStringParameters.Single().Value)
                     {
                         case "-1":
