@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 	<LangVersion>latest</LangVersion>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <AWSProjectType>Lambda</AWSProjectType>
     <RootNamespace>ChampionMasteryGg</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.Core" Version="*" />
@@ -16,4 +17,11 @@
     <PackageReference Include="AWSXRayRecorder.Handlers.AwsSdk" Version="*" />
     <PackageReference Include="MikaelDui.ChampionMasteryGg.Client" Version="*" />
   </ItemGroup>
+	<ItemGroup>
+		<Using Include="Amazon.Lambda"/>
+		<Using Include="Amazon.Lambda.Core"/>
+		<Using Include="Amazon.Lambda.Model"/>
+		<Using Include="Amazon.XRay.Recorder.Handlers.AwsSdk"/>
+		<Using Include="System.Text.Json"/> 
+	</ItemGroup>
 </Project>
