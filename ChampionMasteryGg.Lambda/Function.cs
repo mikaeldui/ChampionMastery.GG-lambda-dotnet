@@ -18,25 +18,24 @@ namespace ChampionMasteryGg
 
         public override async Task<APIGatewayHttpApiV2ProxyResponse> FunctionHandler(APIGatewayHttpApiV2ProxyRequest invocationEvent, ILambdaContext context)
         {
-            try
+            //return Found(invocationEvent); // For debugging
+            switch(invocationEvent.PathParameters.Single().Value)
             {
-                if (invocationEvent.RawPath == "/")                
-                    return Found(await cmggClient.GetHighscoresAsync());                
-                else if (invocationEvent.RawPath == "/level")                
-                    return Found(await cmggClient.GetTotalLevelHighscoresAsync());                
-                else if (invocationEvent.RawPath == "/points")                
-                    return Found(await cmggClient.GetTotalPointsHighscoresAsync());                
-                else if (invocationEvent.RawPath.StartsWith("/champions"))
-                {
-                    var championId = int.Parse(invocationEvent.RawPath["/champions/".Length..]);
-                    return Found(await cmggClient.GetHighscoresAsync(championId));
-                }
-                else
+                case "highscores":
+                    return Found(await cmggClient.GetHighscoresAsync());
+                case "champions":
+                    switch (invocationEvent.QueryStringParameters.Single().Value)
+                    {
+                        case "-1":
+                            return Found(await cmggClient.GetTotalPointsHighscoresAsync());
+                        case "-2":
+                            return Found(await cmggClient.GetTotalLevelHighscoresAsync());
+                        default:
+                            var championId = int.Parse(invocationEvent.QueryStringParameters.Single().Value);
+                            return Found(await cmggClient.GetHighscoresAsync(championId));
+                    }
+                default:
                     return NotFound();
-            }
-            catch
-            {
-                return Error();
             }
         }
     }
