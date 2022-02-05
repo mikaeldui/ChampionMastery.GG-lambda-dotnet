@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AWSProjectType>Lambda</AWSProjectType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.Core" Version="*" />
+    <PackageReference Include="Amazon.Lambda.SQSEvents" Version="*" />
+    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="*" />
+    <PackageReference Include="AWSSDK.Core" Version="*" />
+    <PackageReference Include="AWSSDK.Lambda" Version="*" />
+    <PackageReference Include="AWSXRayRecorder.Core" Version="*" />
+    <PackageReference Include="AWSXRayRecorder.Handlers.AwsSdk" Version="*" />
+    <PackageReference Include="MikaelDui.ChampionMasteryGg.Client" Version="*" />
+  </ItemGroup>
+</Project>
