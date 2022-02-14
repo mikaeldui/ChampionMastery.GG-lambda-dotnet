@@ -10,6 +10,10 @@ It's using the [`MikaelDui.ChampionMasteryGg.Client`](https://github.com/mikaeld
 # Packaging
 
     dotnet lambda package
+    
+or
+
+    dotnet lambda package -farch amd64
 
 # Consuming the Lambda
 With the [`MikaelDui.ChampionMasteryGg.Client`](https://github.com/mikaeldui/ChampionMastery.GG-dotnet-client) library.
